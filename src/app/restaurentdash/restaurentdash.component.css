@@ -1,0 +1,81 @@
+h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+P {
+    font-style: italic;
+    text-align: center;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+input.ng-touched.ng-valid {
+    border: 1px solid green;
+}
+
+.container {
+    background: rgb(3, 17, 169);
+    color: white;
+
+}
+
+.content-body {
+    background: whitesmoke;
+
+}
+
+.pagination {
+    padding: 20px 16px;
+    float: right;
+    font-size: 18px;
+}
+
+.pagination::ng-deep .ngx-pagination .current {
+    background: red;
+}
+
+
+
+/* Add these styles to your component's CSS or global styles */
+.table-responsive {
+    overflow: auto;
+    height: 340px;
+    /* Set the desired height for the scrollable area */
+    margin-top: 30px;
+    margin-left: 5px ;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    /* background-color: #f8f9fa; */
+    z-index: 1;
+}
+
+tbody {
+    /* display: block; */
+    overflow-y: auto;
+    max-height: 100px;
+    /* Set the maximum height for the tbody scrollable area */
+
+}
+
+tbody tr {
+    /*  display: table; */
+    width: 100%;
+    box-sizing: border-box;
+}

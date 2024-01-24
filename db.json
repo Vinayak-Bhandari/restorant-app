@@ -1,0 +1,107 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "name": "Yat",
+      "email": "yat@gmail.com",
+      "mobile": 9482037026,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "3",
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "mobile": 9492037029,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "4",
+      "name": "Kak",
+      "email": "kak@gmail.com",
+      "mobile": 9483037029,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "5",
+      "name": "Aj",
+      "email": "aj@gmail.com",
+      "mobile": 9682037029,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "6",
+      "name": "Pap",
+      "email": "pap@gmail.com",
+      "mobile": 9482137029,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "7",
+      "name": "oot",
+      "email": "oot@gmail.com",
+      "mobile": 9484037029,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "8",
+      "name": "Bir",
+      "email": "bir@gmail.com",
+      "mobile": 9482037929,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "9",
+      "name": "Koti",
+      "email": "koti@gmail.com",
+      "mobile": 8967578908,
+      "address": "Hubli",
+      "services": "Fast Food"
+    },
+    {
+      "id": "10",
+      "name": "Jung",
+      "email": "jung@gmail.com",
+      "mobile": 8977578908,
+      "address": "Hubli",
+      "services": "Fast Food"
+    }
+  ],
+  "comments": [],
+  "signup": [
+    {
+      "name": "Vinayak",
+      "email": "vinayak@gmail.com",
+      "mobile": 9865756752,
+      "password": "123456789",
+      "id": "1"
+    },
+    {
+      "id": "cf80",
+      "name": "Mahi",
+      "email": "mahi@gmail.com",
+      "mobile": 8987675689,
+      "password": "123456"
+    },
+    {
+      "id": "061c",
+      "name": "yathish",
+      "email": "yati@gmail.com",
+      "mobile": 9482037029,
+      "password": "234567"
+    },
+    {
+      "id": "78a0",
+      "email": "raj@gmail.com",
+      "mobile": 9442037890,
+      "name": "raj",
+      "password": "387654"
+    }
+  ]
+}

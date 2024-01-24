@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>TestyCodeiz Resto V2.O</h1>
+                    <strong>Get Free Membership 0!</strong>
+                    <hr>
+                </div>
+
+                <form [formGroup]="myform" (ngSubmit)="signup()">
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="name" formControlName="name" maxlength="20" class="form-control"
+                                placeholder="Enter your Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1">Mobile Number</label>
+                            <input type="number" formControlName="mobile" maxlength="10" class="form-control"
+                                placeholder="Enter your Mobile Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1">Email id</label>
+                            <input type="email" formControlName="email" maxlength="25" class="form-control"
+                                placeholder="Enter your Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" formControlName="password" maxlength="20" class="form-control"
+                                placeholder="Enter your Password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Signup</button>
+
+                </form>
+
+                <a style="color: red; margin-top: 10px;" routerLink="/login">Already registered? Click here to
+                    Login!</a>
+            </div>
+        </div>
+    </div>
+</div>

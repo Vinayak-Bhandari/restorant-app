@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>TestyCodeiz Resto V2.O</h1>
+                    <strong>Fell Free To Login 0!</strong>
+                    <hr>
+                </div>
+
+                <form [formGroup]="formValue" (ngSubmit)="login()">
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1">Email id</label>
+                            <input type="email" formControlName="email" maxlength="25" class="form-control"
+                                placeholder="Enter your Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" formControlName="password" maxlength="20" class="form-control"
+                                placeholder="Enter your Password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+
+                </form>
+
+                <a style="color: red; margin-top: 10px;" routerLink="/signup">New User ? Click here to
+                    Register!</a>
+            </div>
+        </div>
+    </div>
+</div>

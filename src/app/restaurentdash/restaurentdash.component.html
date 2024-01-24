@@ -1,0 +1,166 @@
+<div class="content-body">
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+            <h2 class="text-light primary py-2">Resto App V2.O</h2>
+            <div class="d-flex">
+                <button (click)="clickaddresto()" class="btn btn-success" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Add
+                    Restaurent</button>
+                &nbsp;&nbsp;<button routerLink="/login" (click)="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center">Restaurent Management Application</h1>
+            <p class="lead text-center">Hello user ! manage your Restaurent</p>
+            <br>
+        </div>
+    </div>
+    <br>
+
+    <div class="form-outline">
+        <input type="text" style="width: 20%;margin-left: 72%;" class="form-control" [(ngModel)]="userFilter.name"
+            placeholder="Search Restaurent" (input)="filterRestaurants()">
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">R.Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Services</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <!-- 
+            <tbody>
+                <tr *ngFor="let data of allRestaurentData">
+                    <td>{{data.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.mobile}}</td>
+                    <td>{{data.address}}</td>
+                    <td>{{data.services}}</td>
+                    <td>
+                        <mat-icon style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            color="primary" (click)="oneditResto(data)">edit</mat-icon>
+                        &nbsp;<mat-icon style="cursor: pointer;" color="warn"
+                            (click)="deleteResto(data)">delete</mat-icon>
+                    </td>
+                </tr>
+            </tbody> -->
+
+            <tbody>
+                <!-- Conditionally render based on the presence of a filter -->
+                <ng-container *ngIf="userFilter.name.trim() === ''; else filteredData">
+                    <!-- Show all data when not filtered -->
+                    <tr *ngFor="let data of allRestaurentData">
+                        <td>{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.mobile}}</td>
+                        <td>{{data.address}}</td>
+                        <td>{{data.services}}</td>
+                        <td>
+                            <mat-icon style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                color="primary" (click)="oneditResto(data)">edit</mat-icon>
+                            &nbsp;<mat-icon style="cursor: pointer;" color="warn"
+                                (click)="deleteResto(data)">delete</mat-icon>
+                        </td>
+                    </tr>
+                </ng-container>
+
+                <!-- Show filtered data when there is a filter -->
+                <ng-template #filteredData>
+                    <tr *ngFor="let data of filteredRestaurants">
+                        <td>{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.mobile}}</td>
+                        <td>{{data.address}}</td>
+                        <td>{{data.services}}</td>
+                        <td>
+                            <mat-icon style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                color="primary" (click)="oneditResto(data)">edit</mat-icon>
+                            &nbsp;<mat-icon style="cursor: pointer;" color="warn"
+                                (click)="deleteResto(data)">delete</mat-icon>
+                        </td>
+                    </tr>
+                </ng-template>
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <!-- <pagination-controls (pageChange)="page=$event"></pagination-controls> -->
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModslLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div style="background: blue;" class="modal-header">
+                        <h5 style="font-size: 26px;color: white;font-weight: 700;margin-left: 62px;" class="modal-title"
+                            id="exampleModalLabel">RESTAURENT RECORDS</h5>
+                        <button type="button" style="font-size: 20px;" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body" style="background: white;">
+                        <form [formGroup]="formValue">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="name" formControlName="name" maxlength="20" class="form-control"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mr.Vinayak">
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email Adress</label>
+                                <input type="email" formControlName="email" maxlength="25" class="form-control"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="xyz@gmail.com">
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mobile.No</label>
+                                <input type="number" formControlName="mobile" maxlength="10" class="form-control"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="+91 1234567890">
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Address</label>
+                                <input type="name" formControlName="address" maxlength="30" class="form-control"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="BN/1 Street Hubli">
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Services</label>
+                                <input type="name" formControlName="services" maxlength="20" class="form-control"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Fast Food">
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer" style="background: blue;">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        <button *ngIf="showadd" [disabled]="formValue.invalid" type="button" class="btn btn-success"
+                            (click)="addResto()">Add details</button>
+                        <button *ngIf="showbtn" [disabled]="formValue.invalid" type="button" class="btn btn-success"
+                            (click)="updateResto()">Update details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
